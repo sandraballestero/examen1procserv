@@ -7,7 +7,6 @@ public class Employee {
     private String name;
     private String surname;
 
-
     public Employee(String nif, String name, String surname) {
         this.nif = nif;
         this.name = name;
