@@ -16,9 +16,6 @@ public class Flight {
         this.destination = destination;
     }
 
-    public Flight() {
-    }
-
     public String getFlightNumber() {
         return flightNumber;
     }
