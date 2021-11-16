@@ -1,5 +1,7 @@
 package org.iesfm.rest;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 import java.util.Date;
 import java.util.Objects;
 
@@ -7,13 +9,14 @@ public class Flight {
     private String flightNumber;
     private String origin;
     private String destination;
-    private Date date;
 
-    public Flight(String flightNumber, String origin, String destination, Date date) {
+    public Flight(String flightNumber, String origin, String destination) {
         this.flightNumber = flightNumber;
         this.origin = origin;
         this.destination = destination;
-        this.date = date;
+    }
+
+    public Flight() {
     }
 
     public String getFlightNumber() {
@@ -40,34 +43,16 @@ public class Flight {
         this.destination = destination;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Flight flight = (Flight) o;
-        return Objects.equals(flightNumber, flight.flightNumber) && Objects.equals(origin, flight.origin) && Objects.equals(destination, flight.destination) && Objects.equals(date, flight.date);
+        return Objects.equals(flightNumber, flight.flightNumber) && Objects.equals(origin, flight.origin) && Objects.equals(destination, flight.destination);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(flightNumber, origin, destination, date);
-    }
-
-    @Override
-    public String toString() {
-        return "Flight{" +
-                "flightNumber='" + flightNumber + '\'' +
-                ", origin='" + origin + '\'' +
-                ", destination='" + destination + '\'' +
-                ", date=" + date +
-                '}';
+        return Objects.hash(flightNumber, origin, destination);
     }
 }
