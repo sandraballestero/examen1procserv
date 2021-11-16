@@ -22,6 +22,14 @@ public interface FlightDAO {
     List<Flight> list(String origin);
 
     /**
+     * Devuelve el vuelo con el número de vuelo proporciondo
+     * @param flightNumber
+     * @return
+     * @throws FlightNotFoundException Se lanza cuando no existe el vuelo
+     */
+    Flight getFlight(String flightNumber) throws FlightNotFoundException;
+
+    /**
      * Añade un vuelo, si no existía otro vuelo con el mismo flightNumber
      *
      * @param flight El vuelo que se va a añadir

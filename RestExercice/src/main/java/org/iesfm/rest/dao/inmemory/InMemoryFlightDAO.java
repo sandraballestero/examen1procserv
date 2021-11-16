@@ -25,6 +25,15 @@ public class InMemoryFlightDAO implements FlightDAO {
     }
 
     @Override
+    public Flight getFlight(String flightNumber) throws FlightNotFoundException {
+        if(flights.containsKey(flightNumber)) {
+            return flights.get(flightNumber);
+        } else {
+            throw new FlightNotFoundException();
+        }
+    }
+
+    @Override
     public boolean addFlight(Flight flight) {
         if (flights.containsKey(flight.getFlightNumber())) {
             return false;

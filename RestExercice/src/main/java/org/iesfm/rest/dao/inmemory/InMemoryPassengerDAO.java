@@ -21,6 +21,15 @@ public class InMemoryPassengerDAO implements PassengerDAO {
     }
 
     @Override
+    public Passenger getFlightPassenger(String flightNumber, String nif) {
+        if (passengersByFlight.containsKey(flightNumber)) {
+            return passengersByFlight.get(flightNumber).get(nif);
+        } else {
+            return null;
+        }
+    }
+
+    @Override
     public boolean addPassenger(String flightNumber, Passenger passenger) {
         if (passengersByFlight.containsKey(flightNumber)) {
             Map<String, Passenger> passengers = passengersByFlight.get(flightNumber);

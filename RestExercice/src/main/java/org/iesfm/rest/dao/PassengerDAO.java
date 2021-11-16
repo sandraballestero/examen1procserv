@@ -14,6 +14,14 @@ public interface PassengerDAO {
     List<Passenger> getFlightPassengers(String flightNumber);
 
     /**
+     * Devuelve los datos de un pasajero en un vuelo
+     * @param flightNumber El número de vuelo
+     * @param nif El nif del pasajero
+     * @return Devuelve null si no existe el pasajero
+     */
+    Passenger getFlightPassenger(String flightNumber, String nif);
+
+    /**
      * Añade un pasajero a un vuelo
      * @param flightNumber El número de vuelo
      * @param passenger El pasajero que se va a añadir
