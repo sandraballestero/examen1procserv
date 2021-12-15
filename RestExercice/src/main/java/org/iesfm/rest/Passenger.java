@@ -1,5 +1,8 @@
 package org.iesfm.rest;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Objects;
 
 public class Passenger {
@@ -8,7 +11,12 @@ public class Passenger {
     private String surname;
     private int seat;
 
-    public Passenger(String nif, String name, String surname, int seat) {
+    @JsonCreator
+    public Passenger(
+            @JsonProperty("nif") String nif,
+            @JsonProperty("name") String name,
+            @JsonProperty("surname") String surname,
+            @JsonProperty("seat") int seat) {
         this.nif = nif;
         this.name = name;
         this.surname = surname;

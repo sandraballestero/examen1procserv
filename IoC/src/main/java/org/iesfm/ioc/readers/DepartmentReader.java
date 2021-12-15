@@ -16,6 +16,11 @@ public class DepartmentReader {
     private Scanner scanner;
     private EmployeeReader employeeReader;
 
+    public DepartmentReader(Scanner scanner, EmployeeReader employeeReader) {
+        this.scanner = scanner;
+        this.employeeReader = employeeReader;
+    }
+
     public Department read() {
         log.info("Introduce el nombre del departamento: ");
         String name = scanner.nextLine();

@@ -1,9 +1,8 @@
-package org.iesfm.rest;
+package org.iesfm.airline;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.Date;
 import java.util.Objects;
 
 public class Flight {
@@ -56,14 +55,5 @@ public class Flight {
     @Override
     public int hashCode() {
         return Objects.hash(flightNumber, origin, destination);
-    }
-
-    @Override
-    public String toString() {
-        return "Flight{" +
-                "flightNumber='" + flightNumber + '\'' +
-                ", origin='" + origin + '\'' +
-                ", destination='" + destination + '\'' +
-                '}';
     }
 }
